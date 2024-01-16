@@ -1,0 +1,22 @@
+[debug] [2023-12-07T10:15:37.546Z] ----------------------------------------------------------------------
+[debug] [2023-12-07T10:15:37.549Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\vladi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only auth
+[debug] [2023-12-07T10:15:37.549Z] CLI Version:   11.30.0
+[debug] [2023-12-07T10:15:37.549Z] Platform:      win32
+[debug] [2023-12-07T10:15:37.549Z] Node Version:  v20.9.0
+[debug] [2023-12-07T10:15:37.549Z] Time:          Thu Dec 07 2023 12:15:37 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-12-07T10:15:37.550Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-07T10:15:37.607Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-07T10:15:37.608Z] > authorizing via signed-in user (pakocastle69@gmail.com)
+[warn] !  Could not find config (firebase.json) so using defaults. 
+[info] i  emulators: Starting emulators: auth {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth"}}
+[debug] [2023-12-07T10:15:37.619Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-12-07T10:15:37.619Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-12-07T10:15:37.619Z] assigned listening specs for emulators {"user":{"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[debug] [2023-12-07T10:15:42.645Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\vladi\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+[error] 
+[error] Error: An unexpected error has occurred.
