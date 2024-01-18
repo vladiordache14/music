@@ -26,7 +26,7 @@ const SignUp = ({navigation}) => {
           // Signed up 
            updateProfile(auth.currentUser, {
             displayName: username, // You can set a display name
-            photoURL: photo
+            photoURL: 'https://www.bootdey.com/img/Content/avatar/avatar3.png'
           }).then(() => {
             // Profile updated!
             // ...
@@ -57,7 +57,7 @@ const SignUp = ({navigation}) => {
     <View style={styles.container}>
         <TextInput  value={username} style={styles.input} placeholder="Username" autoCapitalize="none" onChangeText={(text)=> setUsername(text) }></TextInput>
         <TextInput value={email} style={styles.input} placeholder="Email" autoCapitalize="none" onChangeText={(text)=> setEmail(text) }></TextInput>
-        <TextInput value={photo} style={styles.input} placeholder="PhotoURL" autoCapitalize="none" onChangeText={(text) => setPhoto(text)}></TextInput>
+        {/* <TextInput value={photo} style={styles.input} placeholder="PhotoURL" autoCapitalize="none" onChangeText={(text) => setPhoto(text)}></TextInput> */}
       
         <TextInput secureTextEntry={true} value={password} style={styles.input} placeholder="password" autoCapitalize="none" onChangeText={(text)=> setPassword(text) }></TextInput>
 

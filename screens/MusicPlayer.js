@@ -5,7 +5,7 @@ import { View,
     TouchableOpacity,
      Dimensions, 
      Image,
-      Modal, Animated } from 'react-native'
+      Modal, Animated,Button } from 'react-native'
 
 import React, {useEffect, useState, useRef} from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -119,6 +119,8 @@ const MusicPlayer = ({navigation}) => {
         }else if(option=='profile'){
             navigation.navigate('Profile');
 
+        }else if(option=='change'){
+            navigation.navigate('ChangePassword');
         }
         // Close the modal after handling the option
         setIsModalVisible(false);
@@ -207,8 +209,11 @@ const MusicPlayer = ({navigation}) => {
             offset: (songIndex - 1)* width,
         })
     }
+    const closeModal = () => {
+        setIsModalVisible(false);
+      };
 
-    const renderSongs = ({item, index}) =>{         //la sfarsitul melodiei nu se schimba imaginea
+    const renderSongs = ({}) =>{       
     
          return (
             <Animated.View style={style.mainImageWrapper}>
@@ -276,9 +281,11 @@ const MusicPlayer = ({navigation}) => {
              {/*music progress durations */}
              <View style={style.progressLevelDuration}>
                 <Text style={style.progressLabelText}>
-                    {new Date(progress.position*1000).toLocaleTimeString('en-US', { hour12: false }).substring(3)}</Text>
+                    {new Date(progress.position*1000)
+                    .toLocaleTimeString('en-US', { hour12: false }).substring(3)}</Text>
                 <Text style={style.progressLabelText}>
-                    {new Date((progress.duration-progress.position)*1000).toLocaleTimeString('en-US', { hour12: false }).substring(3)}</Text>
+                    {new Date((progress.duration-progress.position)*1000)
+                    .toLocaleTimeString('en-US', { hour12: false }).substring(3)}</Text>
 
              </View>
 
@@ -328,27 +335,32 @@ const MusicPlayer = ({navigation}) => {
             </TouchableOpacity>
 
             </View>
-            <Modal
+            
+        </View>
+        <Modal
         animationType="slide"
         transparent={true}
         visible={isModalVisible}
         onRequestClose={() => setIsModalVisible(false)}
       >
-        <View style={style.modalContainer}>
+        <View style={[style.modalContainer,{ justifyContent: 'flex-end' }]}>
           <TouchableOpacity onPress={() => handleOptionPress('profile')} style={style.option}>
             <Text>View Profile</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => handleOptionPress('logout')} style={style.option}>
             <Text>Logout</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() =>{}} style={style.option}>
+          <TouchableOpacity onPress={() =>handleOptionPress('change')} style={style.option}>
             <Text>Change Password</Text>
           </TouchableOpacity>
+          <View style={style.closeButtonContainer}>
+            <Button title="Close" onPress={closeModal} />
+          </View>
           {/* Add more options as needed */}
         </View>
       </Modal>
-        </View>
     </SafeAreaView>
+    
   )
 }
 
@@ -364,13 +376,19 @@ const style = StyleSheet.create({
     },
     option: {
         backgroundColor: 'white',
-        padding: 15,
+        height: 60, // Set a fixed height for all TouchableOpacity components
+        width:130,
+        padding: 10,
+        borderBottomWidth: 5,
+        borderBottomColor: '#ccc',
+        
       },
     modalContainer: {
         flex: 1,
         justifyContent: 'bottom',
         alignItems: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        marginBottom:10
       },
     maincontainer:{
         flex: 1,
@@ -463,7 +481,11 @@ const style = StyleSheet.create({
         width: '60%',
         marginTop: 10
 
-    }
+    },
+    closeButtonContainer: {
+        marginTop: 10,
+        alignItems: 'center',
+      },
 
 
 

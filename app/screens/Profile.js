@@ -51,12 +51,16 @@ if (user !== null) {
     updateEmail(auth.currentUser, email).then(() => {
       // Email updated!
       // logic still needed
-      alert("Email updated successfully!")
+      alert("updated successfully!")
+      
     }).catch((error) => {
       // An error occurred
       // ...
       alert("error at email ")
-    });
+    }).finally(
+      // goToMusic
+    
+    );
 
     updateProfile(auth.currentUser, {
       displayName: name, // You can set a display name
@@ -120,6 +124,7 @@ if (user !== null) {
         setAvatar(imageUri);
         console.log(imageUri);
         profile.avatar=imageUri;
+        console.log(profile.avatar)
 
       }
     });
@@ -131,7 +136,7 @@ if (user !== null) {
         <Image
           style={styles.avatar}
           // source={{uri: 'https://www.bootdey.com/img/Content/avatar/avatar3.png'}}
-          source={{uri: profile.avatar}}
+          source={{uri: avatar}}
 
         />
         <TouchableOpacity style={styles.changeAvatarButton} onPress={toggleModal}>

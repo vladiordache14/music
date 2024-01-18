@@ -8,10 +8,11 @@ import Welcome from './app/screens/Welcome';
 import SignUp from './app/screens/SignUp';
 import TrackPlayer from 'react-native-track-player';
 import Profile from './app/screens/Profile';
+import ChangePassword from './app/screens/ChangePassword';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
-  
+  console.warn = () => {}; // For all other warnings
   return (
    <NavigationContainer >
     <Stack.Navigator   screenOptions={{
@@ -23,7 +24,7 @@ export default function App() {
       <Stack.Screen name='Login' component={Login} options={{headerShown: false}} />
       <Stack.Screen name='SignUp' component={SignUp} options={{headerShown: false}} />
       <Stack.Screen name='Profile' component={Profile} options={{headerShown: false}} />
-
+      <Stack.Screen name="ChangePassword" component={ChangePassword} options={{headerShown: false}} />
       <Stack.Screen name='MusicPlayer' component={MusicPlayer} options={{headerShown: false}} />
     </Stack.Navigator>
 

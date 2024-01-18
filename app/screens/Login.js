@@ -34,12 +34,20 @@ const Login = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-        <TextInput value={email} style={styles.input} placeholder="Email" autoCapitalize="none" onChangeText={(text)=> setEmail(text) }></TextInput>
-        <TextInput secureTextEntry={true} value={password} style={styles.input} placeholder="password" autoCapitalize="none" onChangeText={(text)=> setPassword(text) }></TextInput>
+        <TextInput value={email} 
+        style={styles.input}
+         placeholder="Email"
+          autoCapitalize="none"
+           onChangeText={(text)=> setEmail(text) }></TextInput>
+        <TextInput secureTextEntry={true}
+         value={password} 
+         style={styles.input}
+          placeholder="password"
+           autoCapitalize="none"
+            onChangeText={(text)=> setPassword(text) }></TextInput>
         {loading ? <ActivityIndicator size="large" color="#0000ff" />
         :<>
         <Button title="login" onPress={signIn} />
-        {/* <Button title="Create account" onPress={signUp} /> */}
         <TouchableOpacity onPress={ signUp }>
             <Text style={styles.signupText}>Don't have an account? Sign Up</Text>
           </TouchableOpacity>
