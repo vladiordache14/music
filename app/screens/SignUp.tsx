@@ -48,7 +48,7 @@ const SignUp = ({navigation}) => {
           // ..
         }).finally(()=>{
             setLoading(false);
-            navigation.navigate('MusicPlayer');
+            // navigation.navigate('MusicPlayer');
 
         });
     }

@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View,LogBox } from 'react-native';
 import Login from './app/screens/Login'
 import MusicPlayer from './screens/MusicPlayer';
 import Welcome from './app/screens/Welcome';
@@ -12,7 +12,8 @@ import ChangePassword from './app/screens/ChangePassword';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
-  console.warn = () => {}; // For all other warnings
+  LogBox.ignoreLogs(['Warning: ...']); 
+  LogBox.ignoreAllLogs();//Ignore all log notifications
   return (
    <NavigationContainer >
     <Stack.Navigator   screenOptions={{
