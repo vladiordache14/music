@@ -97,8 +97,11 @@ if (user !== null) {
         console.log('Image picker error: ', response.error);
       } else {
         let imageUri = response.uri || response.assets?.[0]?.uri;
-        setSelectedImage(imageUri);
-
+        // setSelectedImage(imageUri);
+        setAvatar(imageUri);
+        console.log(imageUri);
+        profile.avatar=imageUri;
+        console.log(profile.avatar)
       }
     });
   };

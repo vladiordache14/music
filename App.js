@@ -13,7 +13,7 @@ import ChangePassword from './app/screens/ChangePassword';
 const Stack = createNativeStackNavigator();
 export default function App() {
   LogBox.ignoreLogs(['Warning: ...']); 
-  LogBox.ignoreAllLogs();//Ignore all log notifications
+  LogBox.ignoreAllLogs();
   return (
    <NavigationContainer >
     <Stack.Navigator   screenOptions={{
